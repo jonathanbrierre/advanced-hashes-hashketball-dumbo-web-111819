@@ -293,7 +293,7 @@ def winning_team
   home_points = []
   away_team = game_hash[:away]
   away_points = []
-  
+  ## Total each teams points 
   home_team.each do |attribute,data|
     if attribute == :players
       data.each do |stat,value|
@@ -316,7 +316,7 @@ def winning_team
   
   total_home_points = home_points.sum 
   total_away_points = away_points.sum
-  
+  ## compare teams 
   if total_home_points < total_away_points
     away_team[:team_name]
   else
@@ -369,3 +369,37 @@ def player_with_longest_name
   end
 end
 
+def long_name_steals_a_ton?
+  ###collects players into a single array
+  new_array = []
+  game_hash.each do |place, team|
+    team.each do |attribute,data|
+      if attribute == :players
+        i = 0 
+        while i < data.count do
+          new_array << data[i]
+          i += 1 
+        end
+      end
+    end
+  end
+  
+  steals_array = []
+  new_array.each do |attribute,data|
+    if attribute == :steals
+      steals_array << data
+    end
+  end
+  most_steals = steals_array.sort[-1]
+  
+  i = 0
+  while i < new_array.count do
+    if new_array[i][:player_name] == player_with_longest_name && new_array[i][:steals]
+  end
+  
+  new_array.each do |attribute,data|
+    if attribute == :player_name && data == player_with_longest_name
+      if new_array[:steals]
+    end
+end
+  
