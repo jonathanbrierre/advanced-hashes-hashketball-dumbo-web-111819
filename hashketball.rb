@@ -394,12 +394,16 @@ def long_name_steals_a_ton?
   
   i = 0
   while i < new_array.count do
-    if new_array[i][:player_name] == player_with_longest_name && new_array[i][:steals]
+    if new_array[i][:player_name] == player_with_longest_name && new_array[i][:steals] == most_steals
+      return true 
+    else 
+      i += 1
+    end
   end
   
-  new_array.each do |attribute,data|
-    if attribute == :player_name && data == player_with_longest_name
-      if new_array[:steals]
-    end
+  # new_array.each do |attribute,data|
+  #   if attribute == :player_name && data == player_with_longest_name
+  #     if new_array[:steals]
+  #   end
 end
   
