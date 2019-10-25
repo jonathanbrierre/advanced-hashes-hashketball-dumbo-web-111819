@@ -340,7 +340,7 @@ def player_with_longest_name
       end
     end
   end
-  
+  ##extracts each player's name into a new array
   name_array = []
   new_array.each do |player|
     player.each do |attribute,data|
@@ -351,13 +351,14 @@ def player_with_longest_name
   end
   names = name_array
   
-  
+  ## counts the characters in each payer's name and returns that value into a new array
   name_count_array =[]
   names.each do |player_name|
     name_count_array << player_name.length 
   end
+  
+ ## Takes the longest name length and returns the player name with that length. 
   biggest_name = name_count_array.sort[-1]
-    
   new_array.each do |player|
     player.each do |attribute,data|
     
@@ -366,6 +367,5 @@ def player_with_longest_name
       end
     end
   end
-
-    
 end
+
