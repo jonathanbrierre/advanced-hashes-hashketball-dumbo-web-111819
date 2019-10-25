@@ -385,9 +385,11 @@ def long_name_steals_a_ton?
   end
   
   steals_array = []
-  new_array.each do |attribute,data|
-    if attribute == :steals
-      steals_array << data
+  new_array.each do |player|
+    player.each do |attribute,data|
+      if attribute == :steals
+        steals_array << data
+      end
     end
   end
   most_steals = steals_array.sort[-1]
