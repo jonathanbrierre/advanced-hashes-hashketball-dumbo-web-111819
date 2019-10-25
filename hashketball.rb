@@ -148,7 +148,7 @@ def shoe_size(name) #yass
   end
 end
 
-def team_colors(team_name) #broken
+def team_colors(team_name) 
   game_hash.each do |place, team|
     if team[:team_name] == team_name
 		  return team[:colors]
@@ -160,29 +160,12 @@ def team_names
 teams_array = []
 game_hash.each do |place, team|
   teams_array << team[:team_name]
-  # binding.pry
 	end
 	teams_array
-  # game_hash.map do |place,team|
-  #   team[:team_name]
-  # end
 end
-#binding.pry
-def player_numbers(team_name) #check again
-#   game_hash
-#   nums = []
-# 	game_hash.each do |place, team|
-# 		if team[:team_name] == team_name
-# 			team.each do |attribute, data|
-# 				if attribute == :players
-# 					data.each do |data|
-# 						nums << data[:number]
-# 					end
-# 				end
-# 			end
-# 		end
-# 	end
-# 	nums
+
+def player_numbers(team_name) 
+
   num_array = []
   game_hash.each do |team|
     if team_name == team[1][:team_name]
@@ -384,6 +367,7 @@ def long_name_steals_a_ton?
     end
   end
   
+  ### collects the steals of each player into an array
   steals_array = []
   new_array.each do |player|
     player.each do |attribute,data|
@@ -392,22 +376,19 @@ def long_name_steals_a_ton?
       end
     end
   end
+  
+  ###gets the highest :steals value and compares it with the :steals value of the player_with_longest_name
+  
   most_steals = steals_array.sort[-1]
-  # binding.pry
   i = 0
   while i < new_array.count do
-    
     if new_array[i][:player_name] == player_with_longest_name && new_array[i][:steals] == most_steals
-      
       return true 
     else 
       i += 1
     end
   end
   
-  # new_array.each do |attribute,data|
-  #   if attribute == :player_name && data == player_with_longest_name
-  #     if new_array[:steals]
-  #   end
+  
 end
   
