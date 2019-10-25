@@ -391,10 +391,10 @@ def long_name_steals_a_ton?
     end
   end
   most_steals = steals_array.sort[-1]
-  
+  binding.pry
   i = 0
   while i < new_array.count do
-    binding.pry
+    
     if new_array[i][:player_name] == player_with_longest_name && new_array[i][:steals] == most_steals
       
       return true 
