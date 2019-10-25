@@ -356,7 +356,7 @@ def player_with_longest_name
   names.each do |player_name|
     name_count_array << player_name.length 
   end
-  biggest_name == name_count_array.sort[-1]
+  biggest_name = name_count_array.sort[-1]
     
   new_array.each do |player|
     player.each do |attribute,data|
